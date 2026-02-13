@@ -83,7 +83,7 @@ const Index = () => {
       </section>
 
      {/* Ongoing Events CTA */}
-<section className="py-16 bg-muted/50">
+{/* <section className="py-16 bg-muted/50">
   <div className="container text-center">
     <SectionHeader 
       title="Events" 
@@ -100,7 +100,7 @@ const Index = () => {
 
 
   </div>
-</section>
+</section> */}
 
 
      {/* Gallery Preview */}

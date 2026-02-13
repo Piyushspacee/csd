@@ -102,17 +102,28 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       </header>
       {/* Announcement Bar */}
-{/* Announcement Bar */}
 <div className="bg-blue-900 text-white py-2 overflow-hidden">
   <div className="marquee">
-    <div className="marquee-content">
-      🎉 Registration for AURA 2.0 Started — Register Now! 🚀
-    </div>
-    <div className="marquee-content">
-      🎉 Registration for AURA 2.0 Started — Register Now! 🚀
-    </div>
+    <a
+      href="https://registration.csdaura.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="marquee-content hover:text-yellow-300 transition-colors"
+    >
+      🎉 Registration for AURA 2.0 Started — Click Here to Register! 🚀
+    </a>
+
+    <a
+      href="https://registration.csdaura.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="marquee-content hover:text-yellow-300 transition-colors"
+    >
+      🎉 Registration for AURA 2.0 Started — Click Here to Register! 🚀
+    </a>
   </div>
 </div>
+
 
 
       {/* Main */}
@@ -151,17 +162,24 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="flex items-center gap-2 mb-3 text-sm font-body opacity-80">
               <Mail size={16} /> csddeptngr@gmail.com
             </div>
-            <div className="flex gap-3">
-              {[Facebook, Instagram, Linkedin, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
+<div className="space-y-3 text-sm font-body opacity-90">
+
+
+  <div className="flex items-center gap-3">
+    <Instagram size={18} />
+    <a
+      href="https://www.instagram.com/csd_dvvpcoe?igsh=MXBqejdjZWpiM2x3OQ=="
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline"
+    >
+      @csd_dvvpcoe
+    </a>
+  </div>
+
+</div>
+
+
           </div>
         </div>
 

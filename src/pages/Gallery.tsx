@@ -13,6 +13,8 @@ import img16 from "@/assets/gallery/16.jpg";
 import img17 from "@/assets/gallery/17.jpg";
 import img6 from "@/assets/gallery/6.jpg";
 import img8 from "@/assets/gallery/8.jpg";
+import img19 from "@/assets/gallery/19.jpg";
+import img18 from "@/assets/gallery/19.jpg";
 
 const images = [
   { src: img1, category: "Events", caption: "Enginers Day" },
@@ -26,7 +28,9 @@ const images = [
 { src: img15, category: "Events", caption: "" },
 { src: img16, category: "Events", caption: "" },
 { src: img17, category: "Events", caption: "" },
-{ src: img1, category: "Events", caption: "" },
+{ src: img18, category: "Events", caption: "" },
+{ src: img19, category: "Events", caption: "" },
+
 ];
 
 export default function Gallery() {

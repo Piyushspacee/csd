@@ -19,14 +19,13 @@ const batches = [
   { year: "2028", students: "72 Students", color: "bg-navy" },
 ];
 
-const galleryImages = [
-  img1,
-  img11,
-  img6,
-  img8,
-  img10,
-  img12,
-];
+import D1 from "../assets/gallery/D1.jpg";
+import D2 from "../assets/gallery/D2.jpg";
+import D3 from "../assets/gallery/D3.jpg";
+import E1 from "../assets/gallery/E1.jpg";
+import F1 from "../assets/gallery/F1.jpg";
+import P1 from "../assets/gallery/P1.jpg";
+
 
 const Index = () => {
   return (
@@ -34,7 +33,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <img src={heroBanner} alt="CSD Department" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-primary/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+
         <div className="relative z-10 text-center px-4 animate-fade-in">
           <h1 className="font-display text-4xl md:text-6xl font-bold text-primary-foreground mb-4">
             Computer Science & Design
@@ -43,7 +43,8 @@ const Index = () => {
             Innovating Technology. Designing the Future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-         <a href="https://registration.csdaura.in" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-accent text-accent-foreground rounded-md font-body font-semibold hover:brightness-110 transition-all shadow-lg">Explore Events</a>
+         <a href="https://registration.csdaura.in" target="_blank" rel="noopener noreferrer"className="px-8 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-md font-body font-semibold transition-all shadow-lg"
+>Explore Events</a>
             {/* <Link
               to="/committee"
               className="px-8 py-3 bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/30 rounded-md font-body font-semibold hover:bg-primary-foreground/20 transition-all"
@@ -89,44 +90,56 @@ const Index = () => {
       subtitle="Check out our exciting events and competitions" 
     />
 
-    <a
-      href="https://registration.csdaura.in"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground rounded-md font-body font-semibold hover:brightness-110 transition-all shadow-lg"
-    >
-      <Calendar size={18} /> View Ongoing Events
-    </a>
+<Link
+  to="/events"
+  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-md font-semibold shadow-lg transition-all duration-300"
+>
+  <Calendar size={18} />
+  View Ongoing Events
+</Link>
+
 
   </div>
 </section>
 
 
-      {/* Gallery Preview */}
-      <section className="py-16 bg-background">
-        <div className="container">
-          <SectionHeader title="Department Memories" subtitle="Capturing our best moments and achievements" />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {galleryImages.map((img, i) => (
-              <div key={i} className="aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer">
-                <img
-                  src={img}
-                  alt={`Department memory ${i + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link to="/gallery" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-body font-medium hover:bg-navy transition-colors">
-              <Image size={18} /> View Full Gallery
-            </Link>
-          </div>
-        </div>
-      </section>
+     {/* Gallery Preview */}
+<section className="py-16 bg-muted/50">
+  <div className="container">
+    <h2 className="text-3xl font-bold text-center mb-10">
+      Gallery Highlights
+    </h2>
 
-      {/* Batches */}
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+      {[D1, D2, D3, E1, F1, P1].map((img, index) => (
+<div
+  key={index}
+  className="overflow-hidden rounded-lg shadow-md cursor-pointer"
+  onClick={() => setLightbox(index)}
+>
+  <img
+    src={img}
+    alt="Gallery"
+    className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300"
+  />
+</div>
+
+      ))}
+    </div>
+
+    <div className="text-center mt-10">
+      <Link
+        to="/gallery"
+        className="px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-md font-semibold"
+      >
+        View Full Gallery
+      </Link>
+    </div>
+  </div>
+</section>
+
+
+      {/* Batches
       <section className="py-16 bg-muted/50">
         <div className="container">
           <SectionHeader title="Our Batches" subtitle="Explore the journey of each batch through their years" />
@@ -151,7 +164,7 @@ const Index = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -103,3 +103,24 @@
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
 }
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 12s linear infinite;
+}
+
+.marquee-content {
+  padding-right: 50px;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

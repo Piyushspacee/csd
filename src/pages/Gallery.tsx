@@ -2,20 +2,31 @@ import { useState } from "react";
 import SectionHeader from "@/components/SectionHeader";
 
 const categories = ["All", "Events", "Workshops", "Cultural", "Technical"];
+import img1 from "@/assets/gallery/1.jpg";
+import img10 from "@/assets/gallery/10.jpg";
+import img11 from "@/assets/gallery/11.jpg";
+import img12 from "@/assets/gallery/12.jpg";
+import img13 from "@/assets/gallery/13.jpg";
+import img14 from "@/assets/gallery/14.jpg";
+import img15 from "@/assets/gallery/15.jpg";
+import img16 from "@/assets/gallery/16.jpg";
+import img17 from "@/assets/gallery/17.jpg";
+import img6 from "@/assets/gallery/6.jpg";
+import img8 from "@/assets/gallery/8.jpg";
 
 const images = [
-  { src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&h=400&fit=crop", category: "Events", caption: "Annual Tech Fest 2024" },
-  { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop", category: "Events", caption: "Hackathon Winners" },
-  { src: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=600&h=400&fit=crop", category: "Workshops", caption: "AI/ML Workshop" },
-  { src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop", category: "Technical", caption: "Coding Competition" },
-  { src: "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=600&h=400&fit=crop", category: "Cultural", caption: "Cultural Night Performance" },
-  { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop", category: "Workshops", caption: "Web Development Bootcamp" },
-  { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop", category: "Events", caption: "Team Building Activity" },
-  { src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop", category: "Technical", caption: "Project Expo" },
-  { src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&h=400&fit=crop", category: "Cultural", caption: "Farewell Celebration" },
-  { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop", category: "Workshops", caption: "Design Thinking Session" },
-  { src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&h=400&fit=crop", category: "Cultural", caption: "Open Mic Night" },
-  { src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop", category: "Technical", caption: "Lab Sessions" },
+  { src: img1, category: "Events", caption: "Enginers Day" },
+  { src: img11, category: "Events", caption: "" },
+{ src: img6, category: "Events", caption: "" },
+{ src: img8, category: "Events", caption: "" },
+{ src: img10, category: "Events", caption: "" },
+{ src: img12, category: "Events", caption: "" },
+{ src: img13, category: "Events", caption: "" },
+{ src: img14, category: "Events", caption: "" },
+{ src: img15, category: "Events", caption: "" },
+{ src: img16, category: "Events", caption: "" },
+{ src: img17, category: "Events", caption: "" },
+{ src: img1, category: "Events", caption: "" },
 ];
 
 export default function Gallery() {

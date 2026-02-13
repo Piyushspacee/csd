@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import { Eye, Target, Calendar, Users, Image, GraduationCap } from "lucide-react";
-import heroBanner from "@/assets/hero-banner.jpg";
+import heroBanner from "@/assets/hero-banner.png";
 import SectionHeader from "@/components/SectionHeader";
+
+import img1 from "@/assets/gallery/1.jpg";
+import img11 from "@/assets/gallery/11.jpg";
+import img6 from "@/assets/gallery/6.jpg";
+import img8 from "@/assets/gallery/8.jpg";
+import img10 from "@/assets/gallery/10.jpg";
+import img12 from "@/assets/gallery/12.jpg";
 
 
 
@@ -13,12 +20,12 @@ const batches = [
 ];
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1559223607-b4d0555ae227?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=300&fit=crop",
-  "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop",
+  img1,
+  img11,
+  img6,
+  img8,
+  img10,
+  img12,
 ];
 
 const Index = () => {
@@ -36,18 +43,13 @@ const Index = () => {
             Innovating Technology. Designing the Future.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/events"
-              className="px-8 py-3 bg-accent text-accent-foreground rounded-md font-body font-semibold hover:brightness-110 transition-all shadow-lg"
-            >
-              Explore Events
-            </Link>
-            <Link
+         <a href="https://registration.csdaura.in" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-accent text-accent-foreground rounded-md font-body font-semibold hover:brightness-110 transition-all shadow-lg">Explore Events</a>
+            {/* <Link
               to="/committee"
               className="px-8 py-3 bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/30 rounded-md font-body font-semibold hover:bg-primary-foreground/20 transition-all"
             >
               Meet Our Committee
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -79,15 +81,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Ongoing Events CTA */}
-      <section className="py-16 bg-muted/50">
-        <div className="container text-center">
-          <SectionHeader title="Events" subtitle="Check out our exciting events and competitions" />
-          <Link to="/events" className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground rounded-md font-body font-semibold hover:brightness-110 transition-all shadow-lg">
-            <Calendar size={18} /> View Ongoing Events
-          </Link>
-        </div>
-      </section>
+     {/* Ongoing Events CTA */}
+<section className="py-16 bg-muted/50">
+  <div className="container text-center">
+    <SectionHeader 
+      title="Events" 
+      subtitle="Check out our exciting events and competitions" 
+    />
+
+    <a
+      href="https://registration.csdaura.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-accent-foreground rounded-md font-body font-semibold hover:brightness-110 transition-all shadow-lg"
+    >
+      <Calendar size={18} /> View Ongoing Events
+    </a>
+
+  </div>
+</section>
+
 
       {/* Gallery Preview */}
       <section className="py-16 bg-background">

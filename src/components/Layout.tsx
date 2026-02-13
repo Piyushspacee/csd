@@ -4,7 +4,8 @@ import { Menu, X, Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } 
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Events", path: "/events" },
+  { label: "Events", path: "https://registration.csdaura.in" },
+
   { label: "Gallery", path: "/gallery" },
 ];
 
@@ -19,8 +20,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container flex justify-between items-center">
           <span className="font-body">Dr. Vithalrao Vikhe Patil College Of Engineering, Ahilyanagar</span>
           <div className="hidden md:flex items-center gap-4">
-            <span className="flex items-center gap-1"><Mail size={14} /> csd@gmail.com</span>
-            <span className="flex items-center gap-1"><Phone size={14} /> +91 98901 24580</span>
+            <span className="flex items-center gap-1"><Mail size={14} /> csddeptngr@gmail.com</span>
+           <a
+  href="https://www.instagram.com/csd_dvvpcoe?igsh=MXBqejdjZWpiM2x3OQ=="
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-1 hover:text-accent transition-colors"
+>
+  <Instagram size={14} />
+  csd_dvvpcoe
+</a>
+
           </div>
         </div>
       </div>
@@ -121,10 +131,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <MapPin size={16} /> Dr. Vithalrao Vikhe Patil College Of Engineering, Ahilyanagar
             </div>
             <div className="flex items-center gap-2 mb-3 text-sm font-body opacity-80">
-              <Mail size={16} /> csd@gmail.com
-            </div>
-            <div className="flex items-center gap-2 mb-6 text-sm font-body opacity-80">
-              <Phone size={16} /> +91 98901 24580
+              <Mail size={16} /> csddeptngr@gmail.com
             </div>
             <div className="flex gap-3">
               {[Facebook, Instagram, Linkedin, Twitter].map((Icon, i) => (
@@ -137,7 +144,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <div className="border-t border-primary-foreground/20">
           <div className="container py-4 flex flex-col md:flex-row justify-between items-center text-xs font-body opacity-70">
-            <span>© 2025 CSD Department, Dr. Vithalrao Vikhe Patil College Of Engineering, Ahilyanagar. All rights reserved.</span>
+            <span>© 2026 CSD Department, Dr. Vithalrao Vikhe Patil College Of Engineering, Ahilyanagar. All rights reserved.</span>
             <span>Designed & Developed by CSD Team</span>
           </div>
         </div>

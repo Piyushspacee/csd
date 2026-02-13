@@ -101,28 +101,41 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         )}
       </header>
-      {/* Announcement Bar */}
-<div className="bg-blue-900 text-white py-2 overflow-hidden">
-  <div className="marquee">
-    <a
-      href="https://registration.csdaura.in"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="marquee-content hover:text-yellow-300 transition-colors"
-    >
-      🎉 Registration for AURA 2.0 Started — Click Here to Register! 🚀
-    </a>
+      <div className="bg-blue-900 text-white py-2 overflow-hidden">
+  <div className="relative w-full overflow-hidden">
+    <div className="flex animate-marquee whitespace-nowrap">
+      
+      <a
+        href="https://registration.csdaura.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mx-8 font-semibold hover:text-yellow-300 transition-colors"
+      >
+        🎉 Registration for AURA 2.0 Started — Click Here to Register! 🚀
+      </a>
 
-    <a
-      href="https://registration.csdaura.in"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="marquee-content hover:text-yellow-300 transition-colors"
-    >
-      🎉 Registration for AURA 2.0 Started — Click Here to Register! 🚀
-    </a>
+      <a
+        href="https://registration.csdaura.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mx-8 font-semibold hover:text-yellow-300 transition-colors"
+      >
+        🎉 Registration for AURA 2.0 Started — Click Here to Register! 🚀
+      </a>
+
+      <a
+        href="https://registration.csdaura.in"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mx-8 font-semibold hover:text-yellow-300 transition-colors"
+      >
+        🎉 Registration for AURA 2.0 Started — Click Here to Register! 🚀
+      </a>
+
+    </div>
   </div>
 </div>
+
 
 
 

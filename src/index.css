@@ -116,11 +116,17 @@
   font-size: 14px;
 }
 
-@keyframes scroll {
+@keyframes marqueeScroll {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-33.333%);
   }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 15s linear infinite;
 }

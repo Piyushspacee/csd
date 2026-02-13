@@ -5,10 +5,7 @@ import { Menu, X, Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } 
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Events", path: "/events" },
-  { label: "Committee", path: "/committee" },
-  { label: "Batches", path: "/batches" },
   { label: "Gallery", path: "/gallery" },
-  { label: "Contact", path: "/contact" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {

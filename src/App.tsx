@@ -11,6 +11,8 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Batches from "./pages/Batches";
 import NotFound from "./pages/NotFound";
+import Faculty from "./pages/faculty";
+
 
 const queryClient = new QueryClient();
 
@@ -23,11 +25,14 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/faculty" element={<Faculty />} />
             <Route path="/events" element={<Events />} />
             <Route path="/committee" element={<Committee />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/batches" element={<Batches />} />
+            
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

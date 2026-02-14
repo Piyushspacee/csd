@@ -6,6 +6,7 @@ import headerImage from "@/assets/header.jpg";
 
 const navLinks = [
   { label: "Home", path: "/" },
+  { label: "Faculty", path: "/faculty" },
   { label: "Events", path: "https://registration.csdaura.in" },
   { label: "Gallery", path: "/gallery" },
 ];
@@ -38,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               alt="CSD Logo"
               className="h-12 w-auto object-contain"
             />
-            <div className="hidden sm:block">
+            <div className="hidden lg:block">
              <div className="font-display font-bold text-white text-lg leading-tight">
 
                 Association of Computer Science & Design Students
@@ -51,25 +52,44 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`px-4 py-2 rounded-md font-body font-medium text-sm transition-colors relative ${
-               pathname === link.path
-  ? "text-yellow-300"
-  : "text-white hover:text-yellow-300"
+<nav className="hidden md:flex items-center gap-6">
 
-                }`}
-              >
-                {link.label}
-                {pathname === link.path && (
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-accent rounded-full" />
-                )}
-              </Link>
-            ))}
-          </nav>
+  {navLinks.map((link) => (
+    <Link
+      key={link.path}
+      to={link.path}
+      className={`px-4 py-2 rounded-md font-body font-medium text-sm transition-colors ${
+        pathname === link.path
+          ? "text-yellow-300"
+          : "text-white hover:text-yellow-300"
+      }`}
+    >
+      {link.label}
+    </Link>
+  ))}
+
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/csd_dvvpcoe?igsh=MXBqejdjZWpiM2x3OQ=="
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 text-white hover:text-yellow-300 transition-colors text-sm font-medium"
+  >
+    <Instagram size={18} />
+    @csd_dvvpcoe
+  </a>
+
+  {/* Mail */}
+  <a
+    href="mailto:csddeptngr@gmail.com"
+    className="flex items-center gap-2 text-white hover:text-yellow-300 transition-colors text-sm font-medium"
+  >
+    <Mail size={18} />
+    csddeptngr@gmail.com
+  </a>
+
+</nav>
+
 
           {/* Mobile Toggle */}
           <button
@@ -82,24 +102,55 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
 
         {/* Mobile Nav */}
-        {mobileOpen && (
-          <nav className="md:hidden bg-white border-t pb-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileOpen(false)}
-                className={`block px-6 py-3 font-body text-sm ${
-                  pathname === link.path
-                    ? "text-primary font-semibold border-l-4 border-accent"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        )}
+        {/* Mobile Nav */}
+{mobileOpen && (
+  <nav className="md:hidden bg-white border-t pb-4">
+
+    {/* Nav Links */}
+    {navLinks.map((link) => (
+      <Link
+        key={link.path}
+        to={link.path}
+        onClick={() => setMobileOpen(false)}
+        className={`block px-6 py-3 font-body text-sm ${
+          pathname === link.path
+            ? "text-primary font-semibold border-l-4 border-accent"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
+        {link.label}
+      </Link>
+    ))}
+
+    {/* Divider */}
+    <div className="border-t my-3"></div>
+
+    {/* Instagram */}
+    <div className="px-6 py-2 flex items-center gap-3 text-sm">
+      <Instagram size={18} />
+      <a
+        href="https://www.instagram.com/csd_dvvpcoe?igsh=MXBqejdjZWpiM2x3OQ=="
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:underline"
+      >
+        @csd_dvvpcoe
+      </a>
+    </div>
+
+    {/* Mail */}
+    <div className="px-6 py-2 flex items-center gap-3 text-sm">
+      <Mail size={18} />
+      <a
+        href="mailto:csddeptngr@gmail.com"
+        className="hover:underline"
+      >
+        csddeptngr@gmail.com
+      </a>
+    </div>
+
+  </nav>
+)}
       </header>
       <div className="bg-blue-900 text-white py-2 overflow-hidden">
   <div className="relative w-full overflow-hidden">

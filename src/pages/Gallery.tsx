@@ -8,9 +8,14 @@ export default function Gallery() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   // 🔥 Auto import all images inside src/assets/gallery
-  const importedImages = Object.values(
-    import.meta.glob("../assets/gallery/*.{jpg,jpeg,png}", { eager: true })
-  ).map((module: any) => module.default);
+const importedImages = Object.entries(
+  import.meta.glob("../assets/gallery/*.{jpg,jpeg,png}", { eager: true })
+)
+  .filter(([path]) =>
+    !path.includes("DF") // 👈 hides faculty images like DF1.jpg
+  )
+  .map(([_, module]: any) => module.default);
+
 
   // Default all images as "Events" category (you can customize later)
   const images = importedImages.map((src: string, index: number) => ({

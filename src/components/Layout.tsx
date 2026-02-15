@@ -7,7 +7,7 @@ import headerImage from "@/assets/header.jpg";
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Faculty", path: "/faculty" },
-  { label: "Events", path: "https://registration.csdaura.in" },
+  { label: "Events", path: "/events" },
   { label: "Gallery", path: "/gallery" },
 ];
 

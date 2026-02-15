@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import Faculty from "./pages/faculty";
 
 
+
 const queryClient = new QueryClient();
 
 const App = () => (

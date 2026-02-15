@@ -1,27 +1,86 @@
-import SectionHeader from "@/components/SectionHeader";
-import EventCard from "@/components/EventCard";
+import { Link } from "react-router-dom";
 
-const events = [
-  { title: "Treasure Hunt", description: "Decode clues, solve puzzles, and race to the treasure across the campus! Form your teams and compete for the grand prize.", fee: "₹50/team", image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=400&fit=crop", slug: "treasure-hunt" },
-  { title: "Tech Hunt", description: "A technical scavenger hunt that tests your coding, debugging, and logical reasoning skills across multiple rounds.", fee: "₹30/person", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop", slug: "tech-hunt" },
-  { title: "BGMI Tournament", description: "Battle it out in the ultimate BGMI showdown. Assemble your squad and fight for glory!", fee: "₹100/team", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop", slug: "bgmi" },
-  { title: "Free Fire Championship", description: "Show your survival skills in the Free Fire championship. Solo and squad modes available.", fee: "₹80/team", image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=400&fit=crop", slug: "free-fire" },
-  { title: "Box Cricket", description: "Cricket fever hits the department! Form your team and compete in thrilling box cricket matches.", fee: "₹200/team", image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&h=400&fit=crop", slug: "box-cricket" },
-  { title: "KBC – Kaun Banega Champion", description: "Test your general knowledge and technical acumen in this quiz-show-style competition.", fee: "₹20/person", image: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=600&h=400&fit=crop", slug: "kbc" },
-  { title: "Open Mic", description: "Showcase your talent! Poetry, comedy, singing, or anything that moves the audience.", fee: "Free Entry", image: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&h=400&fit=crop", slug: "open-mic" },
-  { title: "Prompt War", description: "Battle with AI prompts! Create the best AI-generated outputs and compete for the top spot.", fee: "₹30/person", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop", slug: "prompt-war" },
+import auraImg from "@/assets/events/aura.jpeg";
+import engineersDayImg from "@/assets/events/engineers-day.jpg";
+import teachersDayImg from "@/assets/events/teachers-day.jpg";
+
+const eventsData = [
+  {
+    id: 1,
+    title: "AURA 1.0",
+    short: "Our flagship technical fest.",
+    image: auraImg,
+    description:
+      "AURA 1.0 is our annual technical event including coding competitions, hackathons, workshops, and cultural programs. Students participate from multiple departments.",
+  },
+  {
+    id: 2,
+    title: "Engineers Day",
+    short: "Celebrating innovation and engineering excellence.",
+    image: engineersDayImg,
+    description:
+      "Engineers Day celebrates Sir M. Visvesvaraya’s contribution. Includes technical talks, student presentations, and award distribution.",
+  },
+  {
+    id: 3,
+    title: "Teachers Day",
+    short:
+      "Celebration organized to honor and appreciate the dedication and contributions of our faculty members.",
+    image: teachersDayImg,
+    description:
+      "On the occasion of Teachers’ Day, the ACDS Committee organized a special celebration to express gratitude and respect towards our faculty members.",
+  },
 ];
 
 export default function Events() {
   return (
-    <div className="py-16 bg-background">
+    <div className="py-16 bg-background min-h-screen">
       <div className="container">
-        <SectionHeader title="Events" subtitle="Explore all our exciting events and competitions. Register now!" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {events.map((event) => (
-            <EventCard key={event.slug} {...event} />
+
+        <h1 className="text-4xl font-bold text-center mb-12">
+          Our Events
+        </h1>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {eventsData.map((event) => (
+            <div
+              key={event.id}
+              className="bg-white shadow-md rounded-lg overflow-hidden border hover:shadow-xl transition"
+            >
+
+              {/* Cover Image */}
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-52 object-cover"
+              />
+
+              <div className="p-6">
+                <h2 className="text-xl font-bold mb-2">
+                  {event.title}
+                </h2>
+
+                <p className="text-gray-600 mb-3">
+                  {event.short}
+                </p>
+
+                <p className="text-gray-700 mb-5">
+                  {event.description}
+                </p>
+
+                <Link
+                  to="/gallery"
+                  className="inline-block px-5 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-800 transition"
+                >
+                  View Gallery
+                </Link>
+
+              </div>
+
+            </div>
           ))}
         </div>
+
       </div>
     </div>
   );

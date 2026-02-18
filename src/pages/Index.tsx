@@ -59,7 +59,8 @@ const Index = () => {
   return (
     <div>
       {/* ================= HERO SLIDER ================= */}
-      <section className="relative min-h-screen overflow-hidden">
+     <section className="relative min-h-[70vh] md:min-h-[85vh] overflow-hidden">
+
 
 
         {heroImages.map((img, index) => (
@@ -89,60 +90,21 @@ const Index = () => {
   <p className="mt-2 text-sm md:text-base text-gray-300 tracking-wide">
   Inter-College Technical & Non-Technical Event
 </p>
-
-  {/* Countdown Calendar Style (Refined) */}
-  <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-    {[
-      { label: "Days", value: days },
-      { label: "Hours", value: hours },
-      { label: "Minutes", value: minutes },
-      { label: "Seconds", value: seconds },
-    ].map((item, index) => (
-      <div
-        key={index}
-        className="w-20 md:w-28 bg-white/10 border border-white/20 rounded-md shadow-sm"
-      >
-        {/* Number */}
-        <div className="text-3xl md:text-4xl font-semibold py-4">
-          {String(item.value).padStart(2, "0")}
-        </div>
-
-        {/* Label */}
-        <div className="bg-white/15 text-xs md:text-sm font-medium tracking-wide py-2">
-          {item.label}
-        </div>
-      </div>
-    ))}
-  </div>
-
-  {/* Prize Pool - Balanced */}
-{/* Prize Pool - Refined */}
-<div className="mt-10 border border-gray-400/40 rounded-lg px-8 py-5 bg-white/5">
-  <p className="text-xs uppercase tracking-wider text-gray-300 mb-2">
-    Total Prize Pool
-  </p>
-
-  <p className="text-lg md:text-xl text-gray-300">
-    Up to
-  </p>
-
-  <p className="text-3xl md:text-4xl font-semibold">
-    ₹50,000
-  </p>
-  
-</div>
-<a
+  <a
   href="https://registration.csdaura.in"
   target="_blank"
   rel="noopener noreferrer"
-  className="mt-8 px-10 py-3 bg-blue-700 hover:bg-blue-800 rounded-md font-medium transition-colors duration-300"
+  className="mt-6 px-6 md:px-10 py-4 bg-blue-700 hover:bg-blue-800 rounded-md font-medium transition-colors duration-300 text-center"
 >
-  Register Now
+  <span className="block text-sm md:text-base">
+    Register for AURA 2.0
+  </span>
+  <span className="block text-xs md:text-sm text-blue-100 mt-1">
+    Up to ₹50,000 Prize Pool
+  </span>
 </a>
-
 </div>
-
-      </section>  
+      </section>
 
 
       {/* ================= VISION & MISSION ================= */}

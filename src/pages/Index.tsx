@@ -21,7 +21,6 @@ import F1 from "../assets/gallery/F1.jpg";
 import P1 from "../assets/gallery/P1.jpg";
 
 const Index = () => {
-
   /* ---------------- HERO SLIDER ---------------- */
   const heroImages = [H7, H2, H3, H4, H5, H6, H1];
   const [current, setCurrent] = useState(0);
@@ -34,15 +33,34 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
+  /* ---------------- COUNTDOWN ---------------- */
+  const targetDate = new Date("Feb 23, 2026 10:00:00").getTime();
+  const [timeLeft, setTimeLeft] = useState(
+    targetDate - new Date().getTime()
+  );
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(targetDate - new Date().getTime());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const days = Math.max(0, Math.floor(timeLeft / (1000 * 60 * 60 * 24)));
+  const hours = Math.max(0, Math.floor((timeLeft / (1000 * 60 * 60)) % 24));
+  const minutes = Math.max(0, Math.floor((timeLeft / (1000 * 60)) % 60));
+  const seconds = Math.max(0, Math.floor((timeLeft / 1000) % 60));
+
   /* ---------------- LIGHTBOX ---------------- */
   const previewImages = [D1, D2, D3, E1, F1, P1];
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
     <div>
-
       {/* ================= HERO SLIDER ================= */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden">
+
 
         {heroImages.map((img, index) => (
           <img
@@ -56,21 +74,76 @@ const Index = () => {
         ))}
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Department of Computer Science & Design
-          </h1>
+       {/* Overlay */}
+<div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center text-white px-6">
 
-          <a
-            href="https://registration.csdaura.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-md font-semibold shadow-lg"
-          >
-            AURA 2.0
-          </a>
+  {/* Department Line */}
+  <p className="text-sm md:text-base tracking-widest uppercase text-gray-300 mb-3">
+    <h2>Department of Computer Science & Design</h2>
+  </p>
+
+  {/* Event Title */}
+  <h1 className="text-4xl md:text-6xl font-semibold tracking-wide mb-8">
+    AURA <span className="font-bold">2.0</span>
+  </h1>
+  <p className="mt-2 text-sm md:text-base text-gray-300 tracking-wide">
+  Inter-College Technical & Non-Technical Event
+</p>
+
+  {/* Countdown Calendar Style (Refined) */}
+  <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+    {[
+      { label: "Days", value: days },
+      { label: "Hours", value: hours },
+      { label: "Minutes", value: minutes },
+      { label: "Seconds", value: seconds },
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="w-20 md:w-28 bg-white/10 border border-white/20 rounded-md shadow-sm"
+      >
+        {/* Number */}
+        <div className="text-3xl md:text-4xl font-semibold py-4">
+          {String(item.value).padStart(2, "0")}
         </div>
-      </section>
+
+        {/* Label */}
+        <div className="bg-white/15 text-xs md:text-sm font-medium tracking-wide py-2">
+          {item.label}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* Prize Pool - Balanced */}
+{/* Prize Pool - Refined */}
+<div className="mt-10 border border-gray-400/40 rounded-lg px-8 py-5 bg-white/5">
+  <p className="text-xs uppercase tracking-wider text-gray-300 mb-2">
+    Total Prize Pool
+  </p>
+
+  <p className="text-lg md:text-xl text-gray-300">
+    Up to
+  </p>
+
+  <p className="text-3xl md:text-4xl font-semibold">
+    ₹50,000
+  </p>
+  
+</div>
+<a
+  href="https://registration.csdaura.in"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-8 px-10 py-3 bg-blue-700 hover:bg-blue-800 rounded-md font-medium transition-colors duration-300"
+>
+  Register Now
+</a>
+
+</div>
+
+      </section>  
+
 
       {/* ================= VISION & MISSION ================= */}
       <section className="py-16 bg-background">
@@ -81,7 +154,6 @@ const Index = () => {
           />
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-10">
-
             <div className="bg-card rounded-lg shadow-md p-8 border border-border">
               <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Eye className="text-primary" size={28} />
@@ -105,7 +177,6 @@ const Index = () => {
                 with skills to excel in the ever-evolving technology landscape.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -113,7 +184,6 @@ const Index = () => {
       {/* ================= GALLERY PREVIEW ================= */}
       <section className="py-16 bg-muted/50">
         <div className="container">
-
           <h2 className="text-3xl font-bold text-center mb-10">
             Gallery Highlights
           </h2>
@@ -144,7 +214,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Lightbox */}
         {lightbox !== null && (
           <div
             className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
@@ -158,7 +227,6 @@ const Index = () => {
           </div>
         )}
       </section>
-
     </div>
   );
 };
